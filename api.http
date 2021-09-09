@@ -2,6 +2,10 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "username": "jefferson1104",
+  "username": "joel3007",
   "password": "junior1104"
 }
+
+###
+GET http://localhost:3000/test-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9lbDMwMDciLCJyb2xlIjoidXNlciIsImlhdCI6MTYzMTIzMTI2NCwiZXhwIjoxNjMxMjMxMzI0fQ.qn0I7KLZdMGJQmNAkx5avCEaF-wTG2E65joLzeckuy8
