@@ -32,6 +32,19 @@ $ npm run start:dev
 
 ```
 
+## Gerar uma senha com o bcrypt
+
+```bash
+
+## Executar o comando abaixo no terminal do projeto
+node generate-password.js SENHA
+
+## Exemplo
+# comand: node generate-password.js 123456
+# output: $2b$10$2QHAEW0XFWmCrxeJGBKa2eSXXvPcsWp.WWsohEfqzn1LWs/4NLvrS
+
+```
+
 ## Licença
 
 Nest is [MIT licensed](LICENSE).

@@ -17,9 +17,12 @@ export class AuthController {
   @UseGuards(JwtGuard, RoleGuard)
   @Get('test-auth')
   test(@Req() req) {
-    console.log(req.user);
     return {
-      name: 'Testando a rota',
+      name: req.user.name,
+      username: req.user.username,
+      email: req.user.email,
+      role: req.user.role,
+      description: `Login realizado em ${req.user.loginDate}`,
     };
   }
 }

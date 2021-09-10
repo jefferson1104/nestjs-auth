@@ -1,11 +1,11 @@
-POST http://localhost:3000/login
+POST http://localhost:3333/login
 Content-Type: application/json
 
 {
-  "username": "joel3007",
-  "password": "junior1104"
+  "username": "jefferson1104",
+  "password": "123456"
 }
 
 ###
-GET http://localhost:3000/test-auth
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiam9lbDMwMDciLCJyb2xlIjoidXNlciIsImlhdCI6MTYzMTIzMTI2NCwiZXhwIjoxNjMxMjMxMzI0fQ.qn0I7KLZdMGJQmNAkx5avCEaF-wTG2E65joLzeckuy8
+GET http://localhost:3333/test-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsIm5hbWUiOiJKZWZmZXJzb24gU29hcmVzIiwidXNlcm5hbWUiOiJqZWZmZXJzb24xMTA0IiwiZW1haWwiOiJqZWZmZXJzb25Ac29hcmVzZGV2LmNvbSIsInJvbGUiOiJhZG1pbiIsImxvZ2luRGF0ZSI6IjEwLzA5LzIwMjEiLCJpYXQiOjE2MzEyNDg3OTAsImV4cCI6MTYzMTI0ODg1MH0.QdlUt_Xnr7QLqBhpvBSwtftfDrpUfyIIkBTrOZrJvJQ

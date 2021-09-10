@@ -5,20 +5,26 @@ import * as bcrypt from 'bcrypt';
 const users = [
   {
     id: 1,
+    name: 'Jefferson Soares',
     username: 'jefferson1104',
-    password: '$2b$10$RP6c0t.vF.RFsOIrJhcoguUCn8/Ln5G5cVOUwtsBlh67X9BC0f63O',
+    email: 'jefferson@soaresdev.com',
+    password: '$2b$10$2QHAEW0XFWmCrxeJGBKa2eSXXvPcsWp.WWsohEfqzn1LWs/4NLvrS',
     role: 'admin',
   },
   {
     id: 2,
+    name: 'Joel Soares',
     username: 'joel3007',
-    password: '$2b$10$RP6c0t.vF.RFsOIrJhcoguUCn8/Ln5G5cVOUwtsBlh67X9BC0f63O',
-    role: 'user',
+    email: 'joel@soaresdev.com',
+    password: '$2b$10$2QHAEW0XFWmCrxeJGBKa2eSXXvPcsWp.WWsohEfqzn1LWs/4NLvrS',
+    role: 'admin',
   },
   {
     id: 3,
+    name: 'Arthur Lopes',
     username: 'arthur2104',
-    password: '$2b$10$RP6c0t.vF.RFsOIrJhcoguUCn8/Ln5G5cVOUwtsBlh67X9BC0f63O',
+    email: 'arthur@soaresdev.com',
+    password: '$2b$10$2QHAEW0XFWmCrxeJGBKa2eSXXvPcsWp.WWsohEfqzn1LWs/4NLvrS',
     role: 'user',
   },
 ];
@@ -27,13 +33,29 @@ const users = [
 export class AuthService {
   constructor(private jwtService: JwtService) {}
 
+  addZeroDate(numero) {
+    if (numero <= 9) return '0' + numero;
+    else return numero;
+  }
+
   login(username, password) {
     const user = this.validateCredentials(username, password);
 
+    const today = new Date();
+    const formatedData =
+      this.addZeroDate(today.getDate().toString()) +
+      '/' +
+      this.addZeroDate(today.getMonth() + 1).toString() +
+      '/' +
+      today.getFullYear();
+
     const payload = {
       sub: user.id,
+      name: user.name,
       username: user.username,
+      email: user.email,
       role: user.role,
+      loginDate: formatedData,
     };
 
     return this.jwtService.sign(payload);
