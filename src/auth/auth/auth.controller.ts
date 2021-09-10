@@ -25,4 +25,10 @@ export class AuthController {
       description: `Login realizado em ${req.user.loginDate}`,
     };
   }
+
+  @UseGuards(JwtGuard)
+  @Get('user')
+  user(@Req() req) {
+    return req.user;
+  }
 }
